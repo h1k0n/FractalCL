@@ -40,6 +40,7 @@ endif()
 if(OPENCL_SUPPORT)
     add_definitions("-DOPENCL_SUPPORT=1")
     find_package(OpenCL REQUIRED)
+    include_directories( ${OpenCL_INCLUDE_DIR} )
     set(OPTIONAL_LIBRARIES ${OpenCL_LIBRARY})
     set(OPTIONAL_SOURCES
         fractal_ocl.c
